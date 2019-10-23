@@ -1,0 +1,84 @@
+<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--Jeff Flanegan
+    CWB 208
+    CreateAirlineSurveyTable.html
+    2019-10-22-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <!--No CSS page means formatting is done here-->
+        <style>           
+            body {width : 450px}
+            fieldset{clear: right; clear: left;}
+            fieldset p {display: block; float: left;}
+            section p {display: block; float: left; clear: left;}
+            section input {display:block; float: right; margin: 15px 90px 0 25px;}
+            input[type="radio"] {display: block; float: right; margin: 20px 25px 0 25px;}
+            div p{display: block; float: left; width: 50px; margin-right: 10px;}
+            div p:first-of-type{margin-left: 130px; margin-right: 20px;}
+        </style>
+    </head>
+    <body>
+        <title>Airline Survey</title>
+        <h2>How would you  rate your flight?</h2>
+        <!--Form start-->>
+        <form method="POST" action="EnterAirlineSurveyData.php">
+            <fieldset>
+            <section>
+                <!--Flight information-->
+                <p>Flight Date</p><input type ="date" name="date"  required/>
+                <p>Flight Time</p><input type="time" name="time" required/>
+                <p>Flight Number</p><input type="number" name="number"required/>
+                <p>Airline</p><input type = "text" name="airline"required/>
+                <p>Starting City</p><input type="text" name="sCity" required/>
+                <p>Ending City</p><input type ="text" name ="eCity" required/>
+             </section>
+            </fieldset>
+            <!--Rating scale-->
+            <div>
+                <p>Excellent</p><p>Good</p><p>Fair</p><p>Poor</p><p>No Opinion</p>
+            </div>
+            <!--Survey radio  button choices-->
+            <fieldset id="friend">
+             <p>Friendliness:</p>   <input type="radio" value="no opinion" name="friend"/>
+                <input type="radio" value="Poor" name="friend"/>
+                <input type="radio" value="Fair" name="friend"/>
+                <input type="radio" value="Good" name="friend"/>
+                <input type="radio" value="Excellent" name="friend"/>
+            </fieldset>
+            <fieldset id="space" >
+                <p>Space:</p> <input type="radio" value="no opinion" name="space"/>
+                <input type="radio" value="Poor" name="space"/>
+                <input type="radio" value="Fair" name="space"/>
+                <input type="radio" value="Good" name="space"/>
+                <input type="radio" value="Excellent" name="space"/>
+            </fieldset>
+            <fieldset id="comfort">
+                <p>Comfort:</p> <input type="radio" value="no opinion" name="comfort"/>
+                    <input type="radio" value="Poor" name="comfort"/>
+                    <input type="radio" value="Fair" name="comfort"/>
+                    <input type="radio" value="Good" name="comfort"/>
+                    <input type="radio" value="Excellent" name="comfort"/>
+                </fieldset>
+            <fieldset id="clean">
+                <p>Cleanliness:</p> <input type="radio" value="no opinion" name="clean"/>
+                    <input type="radio" value="Poor" name="clean"/>
+                    <input type="radio" value="Fair" name="clean"/>
+                    <input type="radio" value="Good" name="clean"/>
+                    <input type="radio" value="Excellent" name="clean"/>
+            </fieldset>
+            <fieldset id="noise">
+                    <p>Noise:</p> <input type="radio" value="no opinion" name="noise"/>
+                     <input type="radio" value="Poor" name="noise"/>
+                     <input type="radio" value="Fair" name="noise"/>
+                     <input type="radio" value="Good" name="noise"/>
+                     <input type="radio" value="Excellent" name="noise"/>
+                 </fieldset>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+        <!--link to show survey data-->
+        <p><a href = "ViewAirlineSurveys.php">View Airline Surveys</a></p>
+    </body>
+
+</html>
